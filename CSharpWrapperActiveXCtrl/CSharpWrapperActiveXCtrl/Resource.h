@@ -1,0 +1,22 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by CSharpWrapperActiveXCtrl.rc
+//
+
+#define IDS_CSHARPWRAPPERACTIVEXCTRL               1
+#define IDS_CSHARPWRAPPERACTIVEXCTRL_PPG           2
+
+#define IDS_CSHARPWRAPPERACTIVEXCTRL_PPG_CAPTION   200
+
+#define IDD_PROPPAGE_CSHARPWRAPPERACTIVEXCTRL      200
+
+#define IDD_ABOUTBOX_CSHARPWRAPPERACTIVEXCTRL      1
+
+#define IDB_CSHARPWRAPPERACTIVEXCTRL               1
+
+#define IDI_ABOUTDLL				1
+
+#define _APS_NEXT_RESOURCE_VALUE        201
+#define _APS_NEXT_CONTROL_VALUE         201
+#define _APS_NEXT_SYMED_VALUE           101
+#define _APS_NEXT_COMMAND_VALUE         32768

@@ -21,13 +21,13 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CSharpActiveXCtrlWrapper.cpp">
+    <ClCompile Include="CSharpWrapperActiveXCtrl.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CSharpActiveXCtrlWrapperCtrl.cpp">
+    <ClCompile Include="CSharpWrapperActiveXCtrlCtrl.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CSharpActiveXCtrlWrapperPropPage.cpp">
+    <ClCompile Include="CSharpWrapperActiveXCtrlPropPage.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,39 +38,39 @@
     <ClInclude Include="targetver.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CSharpActiveXCtrlWrapper.h">
+    <ClInclude Include="CSharpWrapperActiveXCtrl.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CSharpActiveXCtrlWrapperCtrl.h">
+    <ClInclude Include="CSharpWrapperActiveXCtrlCtrl.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CSharpActiveXCtrlWrapperPropPage.h">
+    <ClInclude Include="CSharpWrapperActiveXCtrlPropPage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CSharpActiveXCtrlWrapper.def">
+    <None Include="CSharpWrapperActiveXCtrl.def">
       <Filter>소스 파일</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="CSharpActiveXCtrlWrapper.rc">
+    <ResourceCompile Include="CSharpWrapperActiveXCtrl.rc">
       <Filter>리소스 파일</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="CSharpActiveXCtrlWrapper.idl">
+    <Midl Include="CSharpWrapperActiveXCtrl.idl">
       <Filter>소스 파일</Filter>
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="CSharpActiveXCtrlWrapper.ico">
+    <Image Include="CSharpWrapperActiveXCtrl.ico">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="CSharpActiveXCtrlWrapperCtrl.bmp">
+    <Image Include="CSharpWrapperActiveXCtrlCtrl.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
