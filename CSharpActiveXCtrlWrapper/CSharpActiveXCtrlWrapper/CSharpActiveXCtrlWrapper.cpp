@@ -1,24 +1,24 @@
-// CSharpWrapperActiveXCtrl.cpp : CCSharpWrapperActiveXCtrlApp 및 DLL 등록의 구현입니다.
+// CSharpActiveXCtrlWrapper.cpp : CCSharpActiveXCtrlWrapperApp 및 DLL 등록의 구현입니다.
 
 #include "stdafx.h"
-#include "CSharpWrapperActiveXCtrl.h"
+#include "CSharpActiveXCtrlWrapper.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 
-CCSharpWrapperActiveXCtrlApp theApp;
+CCSharpActiveXCtrlWrapperApp theApp;
 
-const GUID CDECL _tlid = { 0x380F898F, 0xEFF1, 0x4142, { 0xA1, 0x4C, 0x88, 0x6, 0x27, 0xC5, 0xF5, 0x77 } };
+const GUID CDECL _tlid = { 0xB903F7A0, 0xF4CA, 0x4005, { 0xBE, 0x59, 0x3, 0xBC, 0xBC, 0xF7, 0x7D, 0x61 } };
 const WORD _wVerMajor = 1;
 const WORD _wVerMinor = 0;
 
 
 
-// CCSharpWrapperActiveXCtrlApp::InitInstance - DLL 초기화입니다.
+// CCSharpActiveXCtrlWrapperApp::InitInstance - DLL 초기화입니다.
 
-BOOL CCSharpWrapperActiveXCtrlApp::InitInstance()
+BOOL CCSharpActiveXCtrlWrapperApp::InitInstance()
 {
 	BOOL bInit = COleControlModule::InitInstance();
 
@@ -32,9 +32,9 @@ BOOL CCSharpWrapperActiveXCtrlApp::InitInstance()
 
 
 
-// CCSharpWrapperActiveXCtrlApp::ExitInstance - DLL 종료입니다.
+// CCSharpActiveXCtrlWrapperApp::ExitInstance - DLL 종료입니다.
 
-int CCSharpWrapperActiveXCtrlApp::ExitInstance()
+int CCSharpActiveXCtrlWrapperApp::ExitInstance()
 {
 	// TODO: 여기에 직접 작성한 모듈 종료 코드를 추가합니다.
 

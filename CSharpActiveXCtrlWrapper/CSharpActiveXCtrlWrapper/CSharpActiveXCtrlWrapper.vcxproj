@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{54882A99-F78C-45C4-A42D-5FA4B27FD4C3}</ProjectGuid>
-    <RootNamespace>CSharpWrapperActiveXCtrl</RootNamespace>
+    <ProjectGuid>{6F7E7DF5-827E-4AD6-A769-AF2A1DC37E2F}</ProjectGuid>
+    <RootNamespace>CSharpActiveXCtrlWrapper</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <Keyword>MFCActiveXProj</Keyword>
   </PropertyGroup>
@@ -99,7 +99,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\CSharpWrapperActiveXCtrl.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\CSharpActiveXCtrlWrapper.def</ModuleDefinitionFile>
       <OutputFile>$(OutDir)$(ProjectName).ocx</OutputFile>
       <RegisterOutput>true</RegisterOutput>
     </Link>
@@ -107,7 +107,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <ValidateAllParameters>true</ValidateAllParameters>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>$(IntDir)CSharpWrapperActiveXCtrl.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)CSharpActiveXCtrlWrapper.tlb</TypeLibraryName>
       <HeaderFileName>$(ProjectName)idl.h</HeaderFileName>
     </Midl>
     <ResourceCompile>
@@ -126,7 +126,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\CSharpWrapperActiveXCtrl.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\CSharpActiveXCtrlWrapper.def</ModuleDefinitionFile>
       <OutputFile>$(OutDir)$(ProjectName).ocx</OutputFile>
       <RegisterOutput>true</RegisterOutput>
     </Link>
@@ -134,7 +134,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <ValidateAllParameters>true</ValidateAllParameters>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>$(IntDir)CSharpWrapperActiveXCtrl.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)CSharpActiveXCtrlWrapper.tlb</TypeLibraryName>
       <HeaderFileName>$(ProjectName)idl.h</HeaderFileName>
     </Midl>
     <ResourceCompile>
@@ -157,7 +157,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>.\CSharpWrapperActiveXCtrl.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\CSharpActiveXCtrlWrapper.def</ModuleDefinitionFile>
       <OutputFile>$(OutDir)$(ProjectName).ocx</OutputFile>
       <RegisterOutput>true</RegisterOutput>
     </Link>
@@ -165,7 +165,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <ValidateAllParameters>true</ValidateAllParameters>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>$(IntDir)CSharpWrapperActiveXCtrl.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)CSharpActiveXCtrlWrapper.tlb</TypeLibraryName>
       <HeaderFileName>$(ProjectName)idl.h</HeaderFileName>
     </Midl>
     <ResourceCompile>
@@ -188,7 +188,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>.\CSharpWrapperActiveXCtrl.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\CSharpActiveXCtrlWrapper.def</ModuleDefinitionFile>
       <OutputFile>$(OutDir)$(ProjectName).ocx</OutputFile>
       <RegisterOutput>true</RegisterOutput>
     </Link>
@@ -196,7 +196,7 @@
       <MkTypLibCompatible>false</MkTypLibCompatible>
       <ValidateAllParameters>true</ValidateAllParameters>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TypeLibraryName>$(IntDir)CSharpWrapperActiveXCtrl.tlb</TypeLibraryName>
+      <TypeLibraryName>$(IntDir)CSharpActiveXCtrlWrapper.tlb</TypeLibraryName>
       <HeaderFileName>$(ProjectName)idl.h</HeaderFileName>
     </Midl>
     <ResourceCompile>
@@ -209,9 +209,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CSharpWrapperActiveXCtrl.cpp" />
-    <ClCompile Include="CSharpWrapperActiveXCtrlCtrl.cpp" />
-    <ClCompile Include="CSharpWrapperActiveXCtrlPropPage.cpp" />
+    <ClCompile Include="CSharpActiveXCtrlWrapper.cpp" />
+    <ClCompile Include="CSharpActiveXCtrlWrapperCtrl.cpp" />
+    <ClCompile Include="CSharpActiveXCtrlWrapperPropPage.cpp" />
+    <ClCompile Include="MyFormView.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -220,25 +221,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CSharpWrapperActiveXCtrl.h" />
-    <ClInclude Include="CSharpWrapperActiveXCtrlCtrl.h" />
-    <ClInclude Include="CSharpWrapperActiveXCtrlPropPage.h" />
+    <ClInclude Include="CSharpActiveXCtrlWrapper.h" />
+    <ClInclude Include="CSharpActiveXCtrlWrapperCtrl.h" />
+    <ClInclude Include="CSharpActiveXCtrlWrapperPropPage.h" />
+    <ClInclude Include="MyFormView.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CSharpWrapperActiveXCtrl.def" />
+    <None Include="CSharpActiveXCtrlWrapper.def" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="CSharpWrapperActiveXCtrl.rc" />
+    <ResourceCompile Include="CSharpActiveXCtrlWrapper.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="CSharpWrapperActiveXCtrl.idl" />
+    <Midl Include="CSharpActiveXCtrlWrapper.idl" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="CSharpWrapperActiveXCtrl.ico" />
-    <Image Include="CSharpWrapperActiveXCtrlCtrl.bmp" />
+    <Image Include="CSharpActiveXCtrlWrapper.ico" />
+    <Image Include="CSharpActiveXCtrlWrapperCtrl.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

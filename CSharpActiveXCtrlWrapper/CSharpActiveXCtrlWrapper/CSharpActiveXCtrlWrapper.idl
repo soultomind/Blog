@@ -1,0 +1,52 @@
+// CSharpActiveXCtrlWrapper.idl : ActiveX 컨트롤 프로젝트의 형식 라이브러리 소스입니다.
+
+// 이 파일은 MIDL 컴파일러 도구에 의해 처리되어
+// CSharpActiveXCtrlWrapper.ocx의 리소스가 되는
+// CSharpActiveXCtrlWrapper.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(B903F7A0-F4CA-4005-BE59-03BCBCF77D61), version(1.0),
+  control ]
+library CSharpActiveXCtrlWrapperLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CCSharpActiveXCtrlWrapperCtrl의 기본 디스패치 인터페이스입니다.
+	[ 
+		uuid(EDFFD0FF-97FA-4322-B58D-0F8AC32ED72B)	
+	]
+	dispinterface _DCSharpActiveXCtrlWrapper
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  CCSharpActiveXCtrlWrapperCtrl의 이벤트 디스패치 인터페이스입니다.
+
+	[ 
+		uuid(9155CED3-A95E-4683-9B81-CCC627B85502)	
+	]
+	dispinterface _DCSharpActiveXCtrlWrapperEvents
+	{
+		properties:
+			//  이벤트 인터페이스에 속성이 없습니다.
+
+		methods:
+	};
+
+	//  CCSharpActiveXCtrlWrapperCtrl의 클래스 정보입니다.
+	[
+		uuid(C5C3AAE2-4733-487B-8A11-C8925B15B3AE)
+	]
+	coclass CSharpActiveXCtrlWrapper
+	{
+		[default] dispinterface _DCSharpActiveXCtrlWrapper;
+		[default, source] dispinterface _DCSharpActiveXCtrlWrapperEvents;
+	};
+
+};
+

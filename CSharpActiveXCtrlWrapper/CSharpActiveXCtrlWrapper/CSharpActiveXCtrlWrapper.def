@@ -1,4 +1,4 @@
-; CSharpWrapperActiveXCtrl.def : 모듈 매개 변수를 선언합니다.
+; CSharpActiveXCtrlWrapper.def : 모듈 매개 변수를 선언합니다.
 
 EXPORTS
 	DllCanUnloadNow     PRIVATE
