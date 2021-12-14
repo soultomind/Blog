@@ -6,31 +6,51 @@ namespace UseDebugView
 {
     class Toolkit
     {
-        // DebugView Filter 시 해당 값으로 
+        /// <summary>
+        /// DebugView Filter 일ㅡㅁ
+        /// <para>Filter/Hightlight 메뉴 Include 항목에 사용될 값</para>
+        /// </summary>
         public static string IncludeFilterName
         {
             get { return _sIncludeFilterName; }
             set
             {
-                if (!String.IsNullOrEmpty(value))
+                if (!String.IsNullOrEmpty(value) && value.Length > 1)
                 {
                     _sIncludeFilterName = value;
                 }
             }
         }
         public static string _sIncludeFilterName;
+
+        /// <summary>
+        /// <see cref="System.Diagnostics.Debug"/>.WriteLine 메서드 출력 여부
+        /// </summary>
         public static bool IsDebugEnabled;
+
+        /// <summary>
+        /// <see cref="System.Diagnostics.Trace"/>.WriteLine 메서드 출력 여부
+        /// </summary>
         public static bool IsTraceEnabled;
+
+        /// <summary>
+        /// 메시지 출력시 현재시간 출력 여부
+        /// </summary>
         public static bool UseNowToString;
         static Toolkit()
         {
-            _sIncludeFilterName = CreateNamespace();
+
 #if DEBUG
+            _sIncludeFilterName = CreateNamespace();
             IsDebugEnabled = true;
+#else
+            _sIncludeFilterName = "ApplicationName";
+            IsDebugEnabled = false;
 #endif
             IsTraceEnabled = true;
-            UseNowToString = true;
+            UseNowToString = false;
         }
+
         private static string CreateNamespace()
         {
             Assembly assembly = Assembly.GetAssembly(typeof(Toolkit));
@@ -55,7 +75,8 @@ namespace UseDebugView
                 }
                 else
                 {
-                    message = String.Format("[{0}] [{1}.{2}] DEBUG - {3}", _sIncludeFilterName, className, methodName, message);
+                    message = String.Format("[{0}] [{1}.{2}] DEBUG - {3}",
+                        _sIncludeFilterName, className, methodName, message);
                 }
                 
                 Debug.WriteLine(message);
@@ -74,11 +95,11 @@ namespace UseDebugView
                 }
                 else
                 {
-                    message = String.Format("[{0}] [{1}.{2}] DEBUG - {3}", _sIncludeFilterName, className, methodName, message);
+                    message = String.Format("[{0}] [{1}.{2}] DEBUG - {3}", 
+                        _sIncludeFilterName, className, methodName, message);
                 }
                 Trace.WriteLine(message);
             }
         }
-        
     }
 }

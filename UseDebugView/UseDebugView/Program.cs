@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UseDebugView
 {
@@ -10,7 +6,6 @@ namespace UseDebugView
     {
         static void Main(string[] args)
         {
-            Toolkit.UseNowToString = true;
             Toolkit.DebugWriteLine("Debug!");
             Toolkit.TraceWriteLine("Trace!");
 
