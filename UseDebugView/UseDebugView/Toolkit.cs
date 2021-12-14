@@ -90,12 +90,12 @@ namespace UseDebugView
                 string methodName = new StackFrame(1, true).GetMethod().Name;
                 if (UseNowToString)
                 {
-                    message = String.Format("[{0}] [{1}.{2}] {3} DEBUG - {4}",
+                    message = String.Format("[{0}] [{1}.{2}] {3} TRACE - {4}",
                         _sIncludeFilterName, className, methodName, NowToString(), message);
                 }
                 else
                 {
-                    message = String.Format("[{0}] [{1}.{2}] DEBUG - {3}", 
+                    message = String.Format("[{0}] [{1}.{2}] TRACE - {3}", 
                         _sIncludeFilterName, className, methodName, message);
                 }
                 Trace.WriteLine(message);
