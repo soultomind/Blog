@@ -4,10 +4,10 @@ using System.Reflection;
 
 namespace UseDebugView
 {
-    class Toolkit
+    internal class Toolkit
     {
         /// <summary>
-        /// DebugView Filter 일ㅡㅁ
+        /// DebugView Filter 이름
         /// <para>Filter/Hightlight 메뉴 Include 항목에 사용될 값</para>
         /// </summary>
         public static string IncludeFilterName
