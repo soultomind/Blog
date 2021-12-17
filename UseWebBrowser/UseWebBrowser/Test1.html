@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function callNative() {
+            if ("CallNative" in window.external) {
+                var data = { eventName: "Btn1 OnClick" };
+                window.external.CallNative(JSON.stringify(data));
+            }
+        }
+
+        function receiveNative(arg) {
+            alert(JSON.stringify(arg));
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" id="Btn1" value="CallNative" onclick="callNative()"/>
+    </div>
+</body>
+</html>

@@ -180,34 +180,7 @@ namespace UseWebBrowser
                 SetRegistryBrowserFeatureControlKey(appName, FEATURE_BROWSER_EMULATION, (uint)_browserEmulation);
             }
         }
-
-        /// <summary>
-        /// HTML5 에 해당하는 기본 레지스트리를 추가한다.
-        /// <para>기본적으로 추가되는 Internet Feature Control Keys 목록</para>
-        /// <code>
-        ///     <para>AddFeature("FEATURE_96DPI_PIXEL", 1); </para>
-        ///     <para>AddFeature("FEATURE_BROWSER_EMULATION", <see cref="InternetFeatureControlKeys.BrowserEmulation"/>);</para>
-        ///     <para>AddFeature("FEATURE_AJAX_CONNECTIONEVENTS", 1);</para>
-        ///     <para>AddFeature("FEATURE_ENABLE_CLIPCHILDREN_OPTIMIZATION", 1);</para>
-        ///     <para>AddFeature("FEATURE_GPU_RENDERING", 1);</para>
-        ///     <para>AddFeature("FEATURE_IVIEWOBJECTDRAW_DMLT9_WITH_GDI", 0);</para>
-        ///     <para>AddFeature("FEATURE_NINPUT_LEGACYMODE", 0);</para>
-        ///     <para>AddFeature("FEATURE_DISABLE_NAVIGATION_SOUNDS", 1);</para>
-        ///     <para>AddFeature("FEATURE_SCRIPTURL_MITIGATION", 1);</para>
-        ///     <para>AddFeature("FEATURE_SPELLCHECKING", 0);</para>
-        ///     <para>AddFeature("FEATURE_STATUS_BAR_THROTTLING", 1);</para>
-        ///     <para>AddFeature("FEATURE_VALIDATE_NAVIGATE_URL", 1);</para>
-        ///     <para>AddFeature("FEATURE_WEBOC_DOCUMENT_ZOOM", 1);</para>
-        ///     <para>AddFeature("FEATURE_WEBOC_POPUPMANAGEMENT", 0);</para>
-        ///     <para>AddFeature("FEATURE_ADDON_MANAGEMENT", 0);</para>
-        ///     <para>AddFeature("FEATURE_WEBSOCKET", 1);</para>
-        ///     <para>AddFeature("FEATURE_WINDOW_RESTRICTIONS", 0);</para>
-        ///     <para>AddFeature("FEATURE_BLOCK_INPUT_PROMPTS", 1);</para>
-        ///     <para>AddFeature("FEATURE_BLOCK_LMZ_SCRIPT", 1);</para>
-        ///     <para>AddFeature("FEATURE_WEBSOCKET_MAXCONNECTIONSPERSERVER", 128);</para>
-        /// </code>
-        /// </summary>
-        public void DefaultHtml5Feature()
+        public void AddDefaultFeature()
         {
             AddFeature("FEATURE_96DPI_PIXEL", 1);
             AddFeature("FEATURE_BROWSER_EMULATION", _browserEmulation);

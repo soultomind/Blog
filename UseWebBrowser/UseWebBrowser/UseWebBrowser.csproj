@@ -59,6 +59,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistryUtility.cs" />
     <Compile Include="Toolkit.cs" />
+    <Compile Include="WebNativeManager.InvokeScript.cs" />
+    <Compile Include="WebNativeManager.WindowExternal.cs" />
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +88,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="InternetFeatureControlKeys.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test1.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test2.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
