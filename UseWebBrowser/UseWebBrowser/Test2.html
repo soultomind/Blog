@@ -1,32 +1,32 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="EUC-KR">
-    <title>C# WebBrowser Test</title>
-        <script>
-            var board = null; 
-            function bodyOnLoad() { 
-                alert("bodyOnLoad()"); 
-                board = document.getElementById("board"); 
-                board.onmousedown = function(e) { 
-                    if (e) { 
-                        alert("board.onmousedown(e)"); 
-                    } else { 
-                        alert("e undefined mousedown"); 
-                    } 
-                }; 
-            } 
-        </script> 
-        <style> 
-            div { 
-                background-color:lightblue; 
-                width:5000px; 
-                height:5000px; 
-
-            } 
-        </style> 
+    <meta charset="utf-8" />
+    <title>Test2</title>
+    <script type="text/javascript">
+        var board = null;
+        function bodyOnLoad() {
+            alert("bodyOnLoad()");
+            board = document.getElementById("board");
+            board.onmousedown = function (e) {
+                if (e) {
+                    alert("board.onmousedown(e)");
+                } else {
+                    alert("e undefined mousedown");
+                }
+            };
+        }
+    </script>
+    <style>
+        div {
+            background-color: lightblue;
+            width: 5000px;
+            height: 5000px;
+        }
+    </style>
 </head>
- <body onload="bodyOnLoad()"> 
-     <div id="board"> </div> 
- </body> 
+<body onload="bodyOnLoad()">
+    <div id="board"> </div>
+</body>
 </html>
+
