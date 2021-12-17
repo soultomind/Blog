@@ -2,7 +2,7 @@
 <h3>내 블로그 소스코드</h3>
 
 CSharpActiveXCtrlWrapper   
-- MFC ActiveX 컨트롤 만들기
+- [MFC] - ActiveX 컨트롤 만들기
 [https://soultomind.tistory.com/189?category=668845](https://soultomind.tistory.com/189?category=668845)
 
 UseDebugView
