@@ -9,6 +9,10 @@ UseDebugView
 - [DebugView] - 사용하기
 [https://soultomind.tistory.com/173?category=668738](https://soultomind.tistory.com/173?category=668738)
 
+UseDesignMode
+- [C#] - WinForm 디자인모드 사용하기
+[https://soultomind.tistory.com/193](https://soultomind.tistory.com/193)
+
 UseWebBrowser
 - [C#] - WinForm WebBrowser 사용방법 및 팁
 [https://soultomind.tistory.com/195?category=668734](https://soultomind.tistory.com/195?category=668734)
