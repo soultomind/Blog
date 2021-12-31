@@ -28,6 +28,8 @@ namespace UseDesignMode
                 Toolkit.TraceWriteLine("Execute");
             }
 
+            Toolkit.TraceWriteLine("DesignMode=" + DesignMode);
+
             // 디자인모드시 EntryAssembly NULL
             if (Assembly.GetEntryAssembly() == null)
             {
