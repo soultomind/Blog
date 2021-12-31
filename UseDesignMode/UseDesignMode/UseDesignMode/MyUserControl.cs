@@ -28,8 +28,6 @@ namespace UseDesignMode
                 Toolkit.TraceWriteLine("Execute");
             }
 
-            Toolkit.TraceWriteLine("DesignMode=" + DesignMode);
-
             // 디자인모드시 EntryAssembly NULL
             if (Assembly.GetEntryAssembly() == null)
             {
@@ -42,6 +40,7 @@ namespace UseDesignMode
             }
             else
             {
+                Toolkit.TraceWriteLine("DesignMode=" + DesignMode);
                 string entryAssemblyLocation = Assembly.GetEntryAssembly().Location;
                 Toolkit.TraceWriteLine("Assembly.GetEntryAssembly().Location=" + entryAssemblyLocation);
             }
@@ -65,12 +64,12 @@ namespace UseDesignMode
         [DisplayName("UseCallback")]
 
         // 4. Description Attribute
-        // 폼 디자인모드시 속성 창에 표시되는 설명을 지정(속성, 이벤트)
+        // 폼 디자인모드시 속성 창에 표시되는 속성 설명을 지정(속성, 이벤트)
         [Description("콜백 여부를 지정합니다.")]
 
         // 5. Category Attribute
         // 폼 디자인모드시 속성 창에 표시되는 속성이 위치 해 있는 카테고리
-        [Category("MyUserControl")]
+        [Category("라이브러리 속성")]
         public bool UseCallback { get; set; } = false;
     }
 }

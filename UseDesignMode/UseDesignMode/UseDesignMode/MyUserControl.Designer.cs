@@ -28,10 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this._LabelControlName = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // _LabelControlName
+            // 
+            this._LabelControlName.AutoSize = true;
+            this._LabelControlName.Location = new System.Drawing.Point(10, 10);
+            this._LabelControlName.Name = "_LabelControlName";
+            this._LabelControlName.Size = new System.Drawing.Size(89, 12);
+            this._LabelControlName.TabIndex = 0;
+            this._LabelControlName.Text = "MyUserControl";
+            // 
+            // MyUserControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this._LabelControlName);
+            this.Name = "MyUserControl";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label _LabelControlName;
     }
 }
