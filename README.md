@@ -16,3 +16,7 @@ UseDesignMode
 UseWebBrowser
 - [C#] - WinForm WebBrowser 사용방법 및 팁
 [https://soultomind.tistory.com/195?category=668734](https://soultomind.tistory.com/195?category=668734)
+
+UseWebView2
+- [C#] - WinFrom Edge WebView2 사용방법 및 팁
+https://soultomind.tistory.com/198
