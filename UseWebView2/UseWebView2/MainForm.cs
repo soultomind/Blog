@@ -23,10 +23,10 @@ namespace WebView2
             Text = Text + " " + AppDomain.CurrentDomain.SetupInformation.TargetFrameworkName;
         }
 
-        private void InitializeWebView2Core()
+        private async void InitializeWebView2Core()
         {
-            _WebView2.EnsureCoreWebView2Async();
             _WebView2.CoreWebView2InitializationCompleted += WebView2_CoreWebView2InitializationCompleted;
+            await _WebView2.EnsureCoreWebView2Async();
 
             _LabelWebView2Version.Text = _LabelWebView2Version.Text + " " + _WebView2.ProductVersion.ToString();
         }
@@ -83,46 +83,56 @@ namespace WebView2
         {
             if (e != null && e.ParameterObjectAsJson != null)
             {
-                Debug.WriteLine("MainForm_DevToolsProtocolEventReceived=" + e.ParameterObjectAsJson);
+                Toolkit.DebugWriteLine("MainForm_DevToolsProtocolEventReceived=" + e.ParameterObjectAsJson);
             }
         }
 
         private void CoreWebView2_NavigationStarting(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs e)
         {
             if (Debugger.IsAttached)
-                Debug.WriteLine("1. CoreWebView2_NavigationStarting");
+            {
+                Toolkit.DebugWriteLine("1. CoreWebView2_NavigationStarting");
+            }
         }
 
         private void CoreWebView2_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
             if (Debugger.IsAttached)
-                Debug.WriteLine("2. CoreWebView2_SourceChanged");
+            {
+                Toolkit.DebugWriteLine("2. CoreWebView2_SourceChanged");
+            }
         }
 
         private void CoreWebView2_ContentLoading(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
         {
             if (Debugger.IsAttached)
-                Debug.WriteLine("3. CoreWebView2_ContentLoading");
+            {
+                Toolkit.DebugWriteLine("3. CoreWebView2_ContentLoading");
+            }
         }
 
         private void CoreWebView2_HistoryChanged(object sender, object e)
         {
             if (Debugger.IsAttached)
-                Debug.WriteLine("4. CoreWebView2_HistoryChanged");
+            {
+                Toolkit.DebugWriteLine("4. CoreWebView2_HistoryChanged");
+            }
         }
 
         private void CoreWebView2_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
             if (Debugger.IsAttached)
-                Debug.WriteLine("5. CoreWebView2_NavigationCompleted");
+            {
+                Toolkit.DebugWriteLine("5. CoreWebView2_NavigationCompleted");
+            }
         }
 
         private void CoreWebView2_WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
         {            
             if (Debugger.IsAttached)
             {
-                Debug.WriteLine("CoreWebView2_WebMessageReceived e.Source=" + e.Source);
-                Debug.WriteLine("CoreWebView2_WebMessageReceived e.WebMessageAsJson=" + e.WebMessageAsJson);
+                Toolkit.DebugWriteLine("CoreWebView2_WebMessageReceived e.Source=" + e.Source);
+                Toolkit.DebugWriteLine("CoreWebView2_WebMessageReceived e.WebMessageAsJson=" + e.WebMessageAsJson);
             }
         }
 
