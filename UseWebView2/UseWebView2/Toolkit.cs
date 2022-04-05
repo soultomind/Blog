@@ -6,7 +6,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebView2
+namespace UseWebView2
 {
     public static class Toolkit
     {
@@ -48,6 +48,32 @@ namespace WebView2
                 message = String.Format("[{0}] TRACE - {1}", header, message);
                 Trace.WriteLine(message);
             }
+        }
+
+        public static bool IsCurrentProcessAdministrator()
+        {
+            bool flag;
+
+            WindowsIdentity identity = null;
+            try
+            {
+                identity = WindowsIdentity.GetCurrent();
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+                flag = principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+            catch (Exception)
+            {
+                flag = false;
+            }
+            finally
+            {
+                if (identity != null)
+                {
+                    identity.Dispose();
+                }
+            }
+
+            return flag;
         }
     }
 }

@@ -10,23 +10,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WebView2
+namespace UseWebView2
 {
     public partial class MainForm : Form
     {
+        private CoreWebView2Environment _env;
         private bool _initializeCoreWebView2;
-        public MainForm()
+        public MainForm(CoreWebView2Environment env)
         {
             InitializeComponent();
-            InitializeWebView2Core();
 
+            this._env = env;
+
+            // 원래 해당 부분은 관리자실행으로 하여 LocalMahcine, CurrentUser 둘다 체크해야함
+            // TODO: CurrentUser 에 레지스트리가 왜 등록이 안되는지 찾아봐야함
+            if (WebView2Util.InstalledEdgeWebView2Runtime())
+            {
+                Toolkit.TraceWriteLine("Edge WebView2 런타임이 설치되어 있습니다.");
+            }
+            else
+            {
+                Toolkit.TraceWriteLine("Edge WebView2 런타임이 설치되어 있지 않습니다.");
+            }
+
+            InitializeWebView2Core();
             Text = Text + " " + AppDomain.CurrentDomain.SetupInformation.TargetFrameworkName;
         }
 
         private async void InitializeWebView2Core()
         {
             _WebView2.CoreWebView2InitializationCompleted += WebView2_CoreWebView2InitializationCompleted;
-            await _WebView2.EnsureCoreWebView2Async();
+            await _WebView2.EnsureCoreWebView2Async(_env);
 
             _LabelWebView2Version.Text = _LabelWebView2Version.Text + " " + _WebView2.ProductVersion.ToString();
         }
@@ -60,9 +74,9 @@ namespace WebView2
                 _WebView2.CoreWebView2.HistoryChanged += CoreWebView2_HistoryChanged;
                 _WebView2.CoreWebView2.NavigationCompleted += CoreWebView2_NavigationCompleted;
 
-                _WebView2.WebMessageReceived += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs>(this.CoreWebView2_WebMessageReceived);
+                _WebView2.WebMessageReceived += new EventHandler<CoreWebView2WebMessageReceivedEventArgs>(CoreWebView2_WebMessageReceived);
 
-                //https://chromedevtools.github.io/devtools-protocol/
+                // https://chromedevtools.github.io/devtools-protocol/
                 _WebView2.CoreWebView2.GetDevToolsProtocolEventReceiver("Log.entryAdded").DevToolsProtocolEventReceived += MainForm_DevToolsProtocolEventReceived;
                 _WebView2.CoreWebView2.CallDevToolsProtocolMethodAsync("Log.enable", "{}");
 
@@ -87,7 +101,7 @@ namespace WebView2
             }
         }
 
-        private void CoreWebView2_NavigationStarting(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs e)
+        private void CoreWebView2_NavigationStarting(object sender, CoreWebView2NavigationStartingEventArgs e)
         {
             if (Debugger.IsAttached)
             {
@@ -95,7 +109,7 @@ namespace WebView2
             }
         }
 
-        private void CoreWebView2_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
+        private void CoreWebView2_SourceChanged(object sender, CoreWebView2SourceChangedEventArgs e)
         {
             if (Debugger.IsAttached)
             {
@@ -103,7 +117,7 @@ namespace WebView2
             }
         }
 
-        private void CoreWebView2_ContentLoading(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
+        private void CoreWebView2_ContentLoading(object sender, CoreWebView2ContentLoadingEventArgs e)
         {
             if (Debugger.IsAttached)
             {
@@ -119,7 +133,7 @@ namespace WebView2
             }
         }
 
-        private void CoreWebView2_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
+        private void CoreWebView2_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
         {
             if (Debugger.IsAttached)
             {

@@ -1,5 +1,5 @@
 ﻿
-namespace WebView2
+namespace UseWebView2
 {
     partial class MainForm
     {
