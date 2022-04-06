@@ -24,7 +24,12 @@ namespace UseWebView2
 
             // 원래 해당 부분은 관리자실행으로 하여 LocalMahcine, CurrentUser 둘다 체크해야함
             // TODO: CurrentUser 에 레지스트리가 왜 등록이 안되는지 찾아봐야함
-            if (WebView2Util.InstalledEdgeWebView2Runtime())
+
+            // 1번 방법 레지스트리
+            // if (WebView2Util.InstalledRegistryEdgeWebView2Runtime())
+
+            // 2번 CoreWebView2Environment.GetAvailableBrowserVersionString(); 사용
+            if (WebView2Util.InstalledAvailableWebView2Runtime())
             {
                 Toolkit.TraceWriteLine("Edge WebView2 런타임이 설치되어 있습니다.");
             }

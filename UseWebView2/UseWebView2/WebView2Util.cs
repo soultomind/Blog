@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using Microsoft.Web.WebView2.Core;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,29 @@ namespace UseWebView2
     {
         public static bool IsProcessX64 = IntPtr.Size == 8;
         public static readonly string ClientsSubId = "{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}";
-        public static bool InstalledEdgeWebView2Runtime()
+
+        public static bool InstalledAvailableWebView2Runtime(string browserExecutableFolder = null)
+        {
+            string version = String.Empty;
+            try
+            {
+                // WebView2Loader.dll 안에 함수를 내부적으로 호출
+                version = CoreWebView2Environment.GetAvailableBrowserVersionString(browserExecutableFolder);
+            }
+            catch (Exception)
+            {
+
+            }
+            if (String.IsNullOrEmpty(version))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public static bool InstalledRegistryEdgeWebView2Runtime()
         {
             if (Toolkit.IsCurrentProcessAdministrator())
             {

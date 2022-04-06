@@ -22,8 +22,8 @@ namespace UseWebView2
             Directory.SetCurrentDirectory(currentDirectory);
             */
 
-            // String userDataFolder = Path.GetTempPath() + @"WebView2UserData";
-            String userDataFolder = null;
+            String userDataFolder = Path.GetTempPath() + @"WebView2UserData";
+            // String userDataFolder = null;
 
             // 실행인자로도 AdditionalBrowserArguments, AllowSingleSignOnUsingOSPrimaryAccount, Language, TargetCompatibleBrowserVersion
             // 설정 가능하게 해야함 이때 Name1=Value1;Name2=Value2 형식으로 Base64 인코딩 처리
