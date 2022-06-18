@@ -15,7 +15,7 @@ namespace UseWebBrowser
         /// </summary>
         public static bool Is64BitProcess = IntPtr.Size == 8;
 
-        public static bool Is64BitOperatingSystem = NativeMethods.InternalCheckIsWow64();
+        public static bool Is64BitOperatingSystem = NativeMethods.IsOS64Bit();
 
         /// <summary>
         /// FEATURE_BROWSER_EMULATION 값 자동적으로 설정 여부
