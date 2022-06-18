@@ -15,7 +15,7 @@ namespace UseWebBrowser
         /// </summary>
         public static bool Is64BitProcess = IntPtr.Size == 8;
 
-        public static bool Is64BitOperatingSystem = Is64BitProcess || NativeMethods.InternalCheckIsWow64();
+        public static bool Is64BitOperatingSystem = NativeMethods.InternalCheckIsWow64();
 
         /// <summary>
         /// FEATURE_BROWSER_EMULATION 값 자동적으로 설정 여부
@@ -221,7 +221,7 @@ namespace UseWebBrowser
             if (_hKey == HKEY.LocalMachine)
             {
                 string subKey = String.Empty;
-                if (Is64BitOperatingSystem)
+                if (!Is64BitProcess && Is64BitOperatingSystem)
                 {
                     subKey = @"Software\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\";
                 }
