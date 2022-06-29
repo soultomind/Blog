@@ -182,27 +182,63 @@ namespace UseWebBrowser
         }
         public void AddDefaultFeature()
         {
-            AddFeature("FEATURE_96DPI_PIXEL", 1);
-            AddFeature("FEATURE_BROWSER_EMULATION", _browserEmulation);
-            AddFeature("FEATURE_AJAX_CONNECTIONEVENTS", 1);
-            AddFeature("FEATURE_ENABLE_CLIPCHILDREN_OPTIMIZATION", 1);
-            AddFeature("FEATURE_GPU_RENDERING", 1);
-            AddFeature("FEATURE_IVIEWOBJECTDRAW_DMLT9_WITH_GDI", 0);
-            AddFeature("FEATURE_NINPUT_LEGACYMODE", 0);
-            AddFeature("FEATURE_DISABLE_NAVIGATION_SOUNDS", 1);
-            AddFeature("FEATURE_SCRIPTURL_MITIGATION", 1);
-            AddFeature("FEATURE_SPELLCHECKING", 0);
-            AddFeature("FEATURE_STATUS_BAR_THROTTLING", 1);
-            AddFeature("FEATURE_VALIDATE_NAVIGATE_URL", 1);
-            AddFeature("FEATURE_WEBOC_DOCUMENT_ZOOM", 1);
-            AddFeature("FEATURE_WEBOC_POPUPMANAGEMENT", 0);
-            AddFeature("FEATURE_ADDON_MANAGEMENT", 0);
-            AddFeature("FEATURE_WEBSOCKET", 1);
-            AddFeature("FEATURE_WINDOW_RESTRICTIONS", 0);
-            AddFeature("FEATURE_BLOCK_INPUT_PROMPTS", 1);
-            AddFeature("FEATURE_BLOCK_LMZ_SCRIPT", 1);
+            // https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/general-info/ee330720(v=vs.85)
 
-            AddFeature("FEATURE_WEBSOCKET_MAXCONNECTIONSPERSERVER", 128);
+            #region (A) 항목
+            
+            #endregion
+
+            #region (B..C) 항목
+            
+            #endregion
+
+            #region (D..H) 항목
+            
+            #endregion
+
+            #region (I..L) 항목
+            
+            #endregion
+
+            #region (M..R) 항목
+            
+
+            #endregion
+
+            #region (S..T) 항목
+            
+            #endregion
+
+            #region (U..Y) 항목
+            
+            #endregion
+
+            #region (Z) 항목
+
+            #endregion
+
+            #region Obsolete Feature Controls
+            
+            #endregion
+
+
+            // (B..C) 항목
+            if (!Features.ContainsKey("FEATURE_BROWSER_EMULATION"))
+            {
+                AddFeature("FEATURE_BROWSER_EMULATION", _browserEmulation);
+            }
+
+            // (U..Y) 항목
+            
+
+            // (U..Y) 항목
+            
+
+            foreach (var key in Features.Keys)
+            {
+                int value = (int)Features[key];
+                AddFeature(key, value);
+            }
         }
 
         /// <summary>
@@ -210,8 +246,8 @@ namespace UseWebBrowser
         /// <para>CurrentUser</para>
         /// <para>Software\Microsoft\Internet Explorer\Main\FeatureControl\</para>
         /// <para>LocalMachine</para>
-        /// <para>x64 = Software\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\</para>
-        /// <para>x86 = Software\Microsoft\Internet Explorer\Main\FeatureControl\</para>
+        /// <para>x64비트 32비트 프로그램 = Software\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\</para>
+        /// <para>그외 = Software\Microsoft\Internet Explorer\Main\FeatureControl\</para>
         /// </summary>
         /// <param name="appName"></param>
         /// <param name="feature"></param>
