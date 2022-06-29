@@ -2,39 +2,30 @@
 <!-- https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/general-info/ee330720(v=vs.85) -->
 <InternetFeatureControlKeys>
   <!-- (A) 항목-->
-  <InternetFeature name="FEATURE_AJAX_CONNECTIONEVENTS">1</InternetFeature>
+  
 
   <!-- (B..C) 항목-->
-  <InternetFeature name="FEATURE_ENABLE_CLIPCHILDREN_OPTIMIZATION">1</InternetFeature>
+  
   <!-- %Auto% 시 해당 값은 로컬 PC에 설치되어 있는 IE버전을 내부적으로 실행 시 설정 한다. -->
   <InternetFeature name="FEATURE_BROWSER_EMULATION">%Auto%</InternetFeature>
 
   <!-- (D..H) 항목-->
-  <InternetFeature name="FEATURE_GPU_RENDERING">1</InternetFeature>
+  
 
   <!-- (I..L) 항목 -->
-  <InternetFeature name="FEATURE_IVIEWOBJECTDRAW_DMLT9_WITH_GDI">0</InternetFeature>
-  <InternetFeature name="FEATURE_NINPUT_LEGACYMODE">0</InternetFeature>
-
+  
   <!-- (M..R) 항목 -->
-  <InternetFeature name="FEATURE_DISABLE_NAVIGATION_SOUNDS">1</InternetFeature>
+  
 
   <!-- (S..T) 항목 -->
-  <InternetFeature name="FEATURE_SCRIPTURL_MITIGATION">1</InternetFeature>
-  <InternetFeature name="FEATURE_SPELLCHECKING">0</InternetFeature>
-  <InternetFeature name="FEATURE_STATUS_BAR_THROTTLING">1</InternetFeature>
+  
 
   <!-- (U..Y) 항목 -->
-  <InternetFeature name="FEATURE_ADDON_MANAGEMENT">0</InternetFeature>
-  <InternetFeature name="FEATURE_WINDOW_RESTRICTIONS">0</InternetFeature>
-  <InternetFeature name="FEATURE_VALIDATE_NAVIGATE_URL">1</InternetFeature>
-  <InternetFeature name="FEATURE_WEBOC_DOCUMENT_ZOOM">1</InternetFeature>
-  <InternetFeature name="FEATURE_WEBOC_POPUPMANAGEMENT">0</InternetFeature>
-  <InternetFeature name="FEATURE_WEBSOCKET">1</InternetFeature>
+  
 
   <!-- (Z) 항목 -->
 
   <!-- Obsolete Feature Controls -->
-  <InternetFeature name="FEATURE_96DPI_PIXEL">1</InternetFeature>
+  
 
 </InternetFeatureControlKeys>
