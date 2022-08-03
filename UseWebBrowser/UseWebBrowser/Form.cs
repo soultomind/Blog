@@ -78,6 +78,10 @@ namespace UseWebBrowser
                 Toolkit.TraceWriteLine("InternetFeatureControlKeys WriteRegistry appName - " + appName);
             }
 
+            appName = Assembly.GetEntryAssembly().GetName().Name;
+            appName = appName + ".exe";
+            featureControlKeys.WriteRegistry(appName);
+
             _WebNativeManager = new WebNativeManager(_WebBrowser);
             _WebBrowser.ObjectForScripting = _WebNativeManager;
         }
